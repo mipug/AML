@@ -22,6 +22,7 @@ In each of the notebooks there is various hyperparameters that can be modified, 
 
 *The solution and notebook is inspired by Pytorch toturial on DCGAN:* https://pytorch.org/tutorials/beginner/dcgan_faces_tutorial.html 
 
+*To run the notebooks, there are some requirements for the libraries that needs to be fulfilled, therefore there is a txt file stating these requirements*
 
 **Following outline of the notebooks:**
 - Importing libraries 
