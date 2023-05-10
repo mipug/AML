@@ -20,7 +20,7 @@ The problem should be solved with a variant of a GAN model. We have decided to i
 ### The DCGAN architecture
 *“A Generative Adversarial Network (GAN) is a deep learning architecture that consists of two neural networks competing against each other in a zero-sum game framework. The goal of GANs is to generate new, synthetic data that resembles some known data distribution.”* Quote taken from https://www.geeksforgeeks.org/generative-adversarial-network-gan/
 
-There are many variants of GAN models, since the genetator and discriminator is not set to be a specific machine learning model. Therefore for our problem, we have chosen to look into GAN variant that is called DCGAN, that include the CNN architecture in the generator and discriminator. The reason for this specific type of GAN model was chosen because there weren't many other programmers who had made a DCGAN in the Kaggle competition. 
+There are many variants of GAN models, since the generator and discriminator is not set to be a specific machine learning model. Therefore for our problem, we have chosen to look into GAN variant that is called DCGAN, that include the CNN architecture in the generator and discriminator. The reason for this specific type of GAN model was chosen because there weren't many other programmers who had made a DCGAN in the Kaggle competition. 
 
 Our implementation of the DCGAN is common, and is inspired by Pytorch own example: https://pytorch.org/tutorials/beginner/dcgan_faces_tutorial.html
 
