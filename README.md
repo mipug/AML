@@ -9,7 +9,7 @@ This project is inspired by a Kaggle competition - https://www.kaggle.com/compet
 The problem should be solved with a variant of a GAN model. We have decided to implement a DCGan to solve the problem and answer our own created research question. Creating a DCGan model we are working in the unsupervised machine learning paradigm. 
 
 **The dataset:** 
-- The data is provided in the Kaggle competition consists of ~300 Monet paintings and ~7000 photos, both in jpg and TFRecord format. As we are making use of a DCgan, only the Monet pictures were relevant to use in our case.
+- The data is provided in the Kaggle competition consists of ~300 Monet paintings and ~7000 photos, both in jpg and TFRecord format. For our DCGan model we only use the Monet pictures.
 
 **Goals:**
 - Generate 7000 pictures in the style of Monet
@@ -20,11 +20,11 @@ The problem should be solved with a variant of a GAN model. We have decided to i
 ### The DCGAN architecture
 *“A Generative Adversarial Network (GAN) is a deep learning architecture that consists of two neural networks competing against each other in a zero-sum game framework. The goal of GANs is to generate new, synthetic data that resembles some known data distribution.”* Quote taken from https://www.geeksforgeeks.org/generative-adversarial-network-gan/
 
-There are many variants of GAN models, since the generator and discriminator is not set to be a specific machine learning model. Therefore for our problem, we have chosen to look into GAN variant that is called DCGAN, that include the CNN architecture in the generator and discriminator. The reason for this specific type of GAN model was chosen because there weren't many other programmers who had made a DCGAN in the Kaggle competition. 
+There are many variants of GAN models. For our problem, we have chosen to look into a GAN variant that is called DCGAN, that include the CNN architecture in the generator and discriminator. We chose this GAN model as we saw it was not frequently used by the competitors in the Kaggle competition, making it interesting to investigate. 
 
-Our implementation of the DCGAN is common, and is inspired by Pytorch own example: https://pytorch.org/tutorials/beginner/dcgan_faces_tutorial.html
+Our implementation of the DCGAN is inspired by Pytorch own example: https://pytorch.org/tutorials/beginner/dcgan_faces_tutorial.html
 
-Choosing the hyperparameters for our model, we have used the same values as Radford et. al does in the paper: *Unsupervised Representation Learning with Deep Convolutional Generative Adversarial Networks* (https://arxiv.org/pdf/1511.06434.pdf). Where they have concluded the best hyperparameters when working with DCGAN. For this reason we have used the same values for our hyperparamteres and has therefore instead experimented with other parts of the DCGAN, such as the picture size, number of epochs, batchsizes and depth in discriminator and generator. 
+Choosing the hyperparameters for our model, we have used the same values as Radford et. al does in the paper: *Unsupervised Representation Learning with Deep Convolutional Generative Adversarial Networks* (https://arxiv.org/pdf/1511.06434.pdf), where they have concluded the best hyperparameters when working with DCGAN. For this reason we have used the same values for our hyperparamteres and has therefore instead experimented with other parts of the DCGAN, such as the picture size, number of epochs, batchsizes and depth in discriminator and generator. 
 
 **The fixed hyperparameters are the following:** 
 - Weights are initialized from a normal distribution with the standard deviation of 0.2. 
@@ -39,12 +39,12 @@ Setting up the model, we are initializing the weights of both the generator and 
 *present and explain results, e.g. in simple accuracy tables over error graphs up to visualisations of representations and/or edge cases – keep it crisp
 
 **Key experiments**
-In general working with the DCGAN, we have tried to run 3 different types of DCGAN models, each of them create different size picture, 64x64, 128x128, 256x256. Where we in each model in the bigger pictures, needed to expand the model, and making it deeper in order to create the larger pictures. This could also be done by changing the size of the kernel for the generator and discriminator, though we choose to expand the model. 
+In general working with the DCGAN, we have tried to run 3 different types of DCGAN models, each of them create different size picture, 64x64, 128x128, 256x256. For 128x128 and 256x256 we have expanded the model, and made it deeper in order to create the larger and more detailed pictures. This could also be done by changing the size of the kernel for the generator and discriminator. 
 
-The main model that we have run is the model that works with the picture sizes of 64x64. With the smaller size, it was easier to try out new parameters, as we found that working with the 128x128 and 256x256 pictures were very computational heavy. As mentioned earlier The hyperparameters that we have experimented with are the epochs and batchsizes in our model.
+The main model that we have run is the model that works with the picture sizes of 64x64. With the smaller size, it was easier to try out new parameters, as we found that working with the 128x128 and 256x256 pictures were very computational heavy. As mentioned earlier the hyperparameters that we have experimented with are the epochs and batchsizes in our model.
 
 **Changes in epochs and batchsizes:**
-- Epochs: 5, 50, 200, 500.
+- Epochs: 5, 50, 100, 200, 500.
 - Batch sizes: 10, 25
 
 #### Results
@@ -53,9 +53,10 @@ Overall all our DCGAN models resulted in a very good discriminator and not as go
 
 Looking at the models where we use many epochs, like when we use 500, one can see that the generator acually becomes worse over time, resulting in this phenomenon mode colapse, where the generator gets stuck on a single image. 
 
+Generally, looking at the visual output, we got the best results with a small batchsize and epochs around 100-200.
 
 ### Discussion 
-Overall we have learned how a DCGAN works, in the beginning of the project we had limited knowledge on how the generator and discriminator worked in a DCGan, though working with it and working with the Monet pictures, we have now gathered a deeper understanding, not only in the DCGAN but also in the general structure of a GAN model.  
+Overall we have learned the inner workings of a DCGAN. In the beginning of the project we had limited knowledge on how the generator and discriminator worked in a DCGan, though working with it and working with the Monet pictures, we have now gathered a deeper understanding, not only in the DCGAN but also in the general structure of a GAN model.  
 
 **What is good**
 - We were able to run all 3 different models with 200 epochs and a batchsize of 10. 
@@ -63,8 +64,7 @@ Overall we have learned how a DCGAN works, in the beginning of the project we ha
 - The output of the pictures actually looks somewhat like a painting with many different colors.  
 
 **What can be improved**
-- Run more the 3 different sizes of picture with the same hyper parameters to
-- Further research what the amount of epoch and batch sizes that could give a good result. 
+- Further research on hyperparameters to find the best combination of epochs and batch sizes to obtain good result. 
 - Methods to solve the issue with the mode collapse (the pictures "getting stuck") 
 
 
