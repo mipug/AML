@@ -17,14 +17,23 @@ The problem should be solved with a variant of a GAN model. We have decided to i
 - In the later stages of the DCGAN process, we have a generator goal defined as Generating a picture that passes the discriminator as a real Monet painting.
 - How does convolutional neural network contribute to the architecture of a GAN model.
 
+### The DCGAN architecture
+*“A Generative Adversarial Network (GAN) is a deep learning architecture that consists of two neural networks competing against each other in a zero-sum game framework. The goal of GANs is to generate new, synthetic data that resembles some known data distribution.”* Quote taken from https://www.geeksforgeeks.org/generative-adversarial-network-gan/
 
-**Github repository:**
+There are many variants of GAN models, sincce the genetator and discriminator is not set to be a specific machine learning model. Therefore for our problem, we have chosen to look into GAN variant that is called DCGAN, that include the CNN architecture in the generator and discriminator. The reason for this specific type of GAN model was chosen because there weren't many other programmers who had made a DCGAN in the Kaggle competition. 
 
+Our implementation of the DCGAN is common, and is inspired by Pytorch own example: https://pytorch.org/tutorials/beginner/dcgan_faces_tutorial.html
+
+**Training mechanisms:**
+Setting up the model, we are initializing the weights of both the generator and the discriminator. In the first training session
+
+In the beginning of the model, the parameters for 
+
+
+### Github repository
 This github repository contains 3 different notebooks, each containing 3 different DCGAN models. The models varies in the sizes of the pictures that they work with, they are producing the repective picture sizes: 64x64, 128x128, 256x256. 
 
-In each of the notebooks there is various hyperparameters that can be modified, to change the outcome of the models. 
-
-*The solution and notebook is inspired by Pytorch toturial on DCGAN:* https://pytorch.org/tutorials/beginner/dcgan_faces_tutorial.html 
+In each of the notebooks there is various hyperparameters that can be modified, to change the outcome of the models.  
 
 *To run the notebooks, there are some requirements for the libraries that needs to be fulfilled, therefore there is a txt file stating these requirements*
 
