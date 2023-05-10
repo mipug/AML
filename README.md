@@ -49,8 +49,9 @@ The main model that we have run is the model that works with the picture sizes o
 
 #### Results
 
-Overall all our DCGAN models resulted in a very good discriminator and not as good generator, this is shown in our loss visualisations. 
+Overall all our DCGAN models resulted in a very good discriminator and not as good generator, this is shown in our loss visualisations that can be seen in the folder: *Results*. 
 
+Looking at the models where we use many epochs, like when we use 500, one can see that the generator acually becomes worse over time, resulting in this phenomenon mode colapse, where the generator gets stuck on a single image. 
 
 
 ### Discussion 
