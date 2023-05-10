@@ -25,9 +25,7 @@ There are many variants of GAN models, sincce the genetator and discriminator is
 Our implementation of the DCGAN is common, and is inspired by Pytorch own example: https://pytorch.org/tutorials/beginner/dcgan_faces_tutorial.html
 
 **Training mechanisms:**
-Setting up the model, we are initializing the weights of both the generator and the discriminator. In the first training session
-
-In the beginning of the model, the parameters for 
+Setting up the model, we are initializing the weights of both the generator and the discriminator. During training, the generator network takes random noise as input and generates synthetic images, while the discriminator network tries to distinguish between real and synthetic images. The training process involves iteratively updating the weights of the generator and discriminator networks based on the error rate of the discriminator's classification of real and synthetic images. The Generator and Discriminator are evaluated by using the BCEloss (Binary Cross Entropy).
 
 
 ### Github repository
