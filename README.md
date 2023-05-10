@@ -11,7 +11,8 @@ The dataset provided in the Kaggle competition consists of ~300 Monet paintings 
 **Goals:**
 - Generate 7000 pictures in the style of Monet
 - In the early stages of the DCGAN process, we have a Discriminator goal as defined: the discriminator is able to identify a fake Monet and a real Monet. 
-- In the later stages of the DCGAN process, we have a generator goal defined as Generating a picture that passes the discriminator as a real Monet painting. 
+- In the later stages of the DCGAN process, we have a generator goal defined as Generating a picture that passes the discriminator as a real Monet painting.
+- How does convolutional neural network contribute to the architecture of a GAN model.
 
 
 **Github repository:**
