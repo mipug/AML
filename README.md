@@ -47,6 +47,10 @@ The main model that we have run is the model that works with the picture sizes o
 - Epochs: 5, 50, 200, 500.
 - Batch sizes: 10, 25
 
+#### Results
+
+Overall all our DCGAN models resulted in a very good discriminator and not as good generator, this is shown in our loss visualisations. 
+
 
 
 ### Discussion 
