@@ -20,13 +20,27 @@ The problem should be solved with a variant of a GAN model. We have decided to i
 ### The DCGAN architecture
 *“A Generative Adversarial Network (GAN) is a deep learning architecture that consists of two neural networks competing against each other in a zero-sum game framework. The goal of GANs is to generate new, synthetic data that resembles some known data distribution.”* Quote taken from https://www.geeksforgeeks.org/generative-adversarial-network-gan/
 
-There are many variants of GAN models, sincce the genetator and discriminator is not set to be a specific machine learning model. Therefore for our problem, we have chosen to look into GAN variant that is called DCGAN, that include the CNN architecture in the generator and discriminator. The reason for this specific type of GAN model was chosen because there weren't many other programmers who had made a DCGAN in the Kaggle competition. 
+There are many variants of GAN models, since the genetator and discriminator is not set to be a specific machine learning model. Therefore for our problem, we have chosen to look into GAN variant that is called DCGAN, that include the CNN architecture in the generator and discriminator. The reason for this specific type of GAN model was chosen because there weren't many other programmers who had made a DCGAN in the Kaggle competition. 
 
 Our implementation of the DCGAN is common, and is inspired by Pytorch own example: https://pytorch.org/tutorials/beginner/dcgan_faces_tutorial.html
+
+Choosing the hyperparameters for our model, we have used the same values as Radford et. al does in the paper: *Unsupervised Representation Learning with Deep Convolutional Generative Adversarial Networks* (https://arxiv.org/pdf/1511.06434.pdf). Where they have concluded the best hyperparameters when working with DCGAN. For this reason we have used the same values for our hyperparamteres and has therefore instead experimented with other parts of the DCGAN, such as the picture size, number of epochs, batchsizes and depth in discriminator and generator. 
+
+**The fixed hyperparameters are the following:** 
+- Weights are initialized from a normal distribution with the standard deviation of 0.2. 
+- Learning rate: 0.0002.
+- Slope of LeakyReLU set to 0.2
+- Momentum term beta1 is set to 0.5
 
 **Training mechanisms:**
 Setting up the model, we are initializing the weights of both the generator and the discriminator. During training, the generator network takes random noise as input and generates synthetic images, while the discriminator network tries to distinguish between real and synthetic images. The training process involves iteratively updating the weights of the generator and discriminator networks based on the error rate of the discriminator's classification of real and synthetic images. The Generator and Discriminator are evaluated by using the BCEloss (Binary Cross Entropy).
 
+### Key experiments & results
+*present and explain results, e.g. in simple accuracy tables over error graphs up to visualisations of representations and/or edge cases – keep it crisp
+
+In general working with the DCGAN, we have tried to run 3 different types of DCGAN models, each of them create different size picture, 64x64, 128x128, 256x256. Where we in each model in the bigger pictures, needed to expand the model, and making it deeper in order to create the larger pictures. This could also be done by changing the size of the kernel for the generator and discriminator, though we choose to expand the model. 
+
+The main model that we have run is the model that works with the picture sizes of 64x64. With the smaller size, it was easier to try out various hyperparameters, as we found that working with the 128x128 and 256x256 pictures were very computational heavy. As mentioned earlier The hyperparameters that we have experimented with various epochs and batch sizes in our model, and then of course the various picture sizes and number of layers in the generator and discriminator. 
 
 ### Github repository
 This github repository contains 3 different notebooks, each containing 3 different DCGAN models. The models varies in the sizes of the pictures that they work with, they are producing the repective picture sizes: 64x64, 128x128, 256x256. 
