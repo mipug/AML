@@ -9,7 +9,7 @@ This project is inspired by a Kaggle competition - https://www.kaggle.com/compet
 The problem should be solved with a variant of a GAN model. We have decided to implement a DCGan to solve the problem and answer our own created research question. Creating a DCGan model we are working in the unsupervised machine learning paradigm. 
 
 **The dataset:** 
-- The data is provided in the Kaggle competition consists of ~300 Monet paintings and ~7000 photos, both in jpg and TFRecord format. 
+- The data is provided in the Kaggle competition consists of ~300 Monet paintings and ~7000 photos, both in jpg and TFRecord format. As we are making use of a DCgan, only the Monet pictures were relevant to use in our case.
 
 **Goals:**
 - Generate 7000 pictures in the style of Monet
