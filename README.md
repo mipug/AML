@@ -33,7 +33,7 @@ Choosing the hyperparameters for our model, we have used the same values as Radf
 - Momentum term beta1 is set to 0.5
 
 **Training mechanisms:**
-Setting up the model, we are initializing the weights of both the generator and the discriminator. During training, the generator network takes random noise as input and generates synthetic images, while the discriminator network tries to distinguish between real and synthetic images. The training process involves iteratively updating the weights of the generator and discriminator networks based on the error rate of the discriminator's classification of real and synthetic images. The Generator and Discriminator are evaluated by using the BCEloss (Binary Cross Entropy).
+Setting up the model, we are initializing the weights of both the generator and the discriminator. During training, the generator network takes random noise as input and generates synthetic images, while the discriminator network tries to distinguish between real and synthetic images. The training process involves iteratively updating the weights of the generator and discriminator networks based on the error rate of the discriminator's classification of real and synthetic images. The generator and discriminator are evaluated by using the BCEloss (Binary Cross Entropy).
 
 ### Key experiments & results
 *present and explain results, e.g. in simple accuracy tables over error graphs up to visualisations of representations and/or edge cases – keep it crisp
@@ -54,7 +54,7 @@ Overall all our DCGAN models resulted in a very good discriminator and not as go
 
 
 ### Discussion 
-Overall we have learned how a DCGAN works, in the beginning of the project we had limited knowledge on how the generator and discriminator worked in the detail, though working with it and working with the Monet pictures, we have now gathered a deeper understanding, not only in the DCGAN but also in the general structure of a GAN model.  
+Overall we have learned how a DCGAN works, in the beginning of the project we had limited knowledge on how the generator and discriminator worked in a DCGan, though working with it and working with the Monet pictures, we have now gathered a deeper understanding, not only in the DCGAN but also in the general structure of a GAN model.  
 
 **What is good**
 - We were able to run all 3 different models with 200 epochs and a batchsize of 10. 
