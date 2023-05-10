@@ -1,6 +1,8 @@
 # Project in the course: Advanced Machine Learning for Data Science
 
 ## I’m Something of a Painter Myself
+- Marie-Louise Tommerup & Mia Pugholm
+
 *To what extent is it possible to identify and create pictures that resemble Monet painting-style using DCGan (Deep Convolutional generative adversarial network)?*
 
 This project is inspired by a Kaggle competition - https://www.kaggle.com/competitions/gan-getting-started/overview 
